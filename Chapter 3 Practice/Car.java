@@ -17,8 +17,8 @@ public class Car
      */
     public Car( double fuelEfficiency )
     {
-        fuelInTank = 0.0;
-        fuelEfficiency = fuelEfficiency;
+        this.fuelInTank = 0.0;
+        this.fuelEfficiency = fuelEfficiency;
     }
 
     /**
@@ -29,6 +29,7 @@ public class Car
      */
     public void drive( double distance )
     {
+        double gas = this.getGasInTank();
         fuelInTank -= distance / fuelEfficiency;
     }
     
