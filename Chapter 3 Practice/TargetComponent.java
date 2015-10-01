@@ -13,9 +13,6 @@ public class TargetComponent extends JComponent
         
         Target target1 = new Target(0,0);
         
-        int x = getWidth() - 60;
-        int y = getHeight() - 30;
-        
         //Target target2 = new Target(x,y);
         
         target1.draw(g2);
