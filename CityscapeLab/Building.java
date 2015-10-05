@@ -16,7 +16,12 @@ public class Building
     
     private int xLeft;
     private int yBottom;
-    private int stories;
+    private final int width;
+    private final int height;
+    private int xRight;
+    private int yTop;
+    private final int wWidth;
+    private final int wHeight;
 
     /**
      * Constructs a building with a given bottom left corner.
@@ -27,6 +32,12 @@ public class Building
     {
         this.xLeft = x;
         this.yBottom = y;
+        this.width = 100;
+        this.height = 200;
+        this.xRight = xLeft+width;
+        this.yTop = yBottom-height;
+        this.wWidth = 80;
+        this.wHeight = 20;
     }
 
     /**
@@ -35,9 +46,21 @@ public class Building
      */
     public void draw(Graphics2D g2)
     {
-        Rectangle bldng = new Rectangle(this.xLeft,this.yBottom,100,200);
+        Rectangle frame = new Rectangle(this.xLeft,this.yTop,width,height);
+        Rectangle story1 = new Rectangle(this.xLeft+10,this.yTop+15,wWidth,wHeight);
+        Rectangle story2 = new Rectangle(this.xLeft+10,this.yTop+45,wWidth,wHeight);
+        Rectangle story3 = new Rectangle(this.xLeft+10,this.yTop+75,wWidth,wHeight);
+        Rectangle story4 = new Rectangle(this.xLeft+10,this.yTop+105,wWidth,wHeight);
+        Rectangle story5 = new Rectangle(this.xLeft+10,this.yTop+135,wWidth,wHeight);
+        Rectangle door = new Rectangle(this.xLeft+35,this.yBottom-20,30,20);
         
-        g2.draw(bldng);
+        g2.draw(frame);
+        g2.draw(story1);
+        g2.draw(story2);
+        g2.draw(story3);
+        g2.draw(story4);
+        g2.draw(story5);
+        g2.draw(door);
     }
     
     /**
