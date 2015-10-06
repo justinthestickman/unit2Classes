@@ -7,12 +7,21 @@ import java.awt.geom.Point2D;
 /**
  * A building that can be positioned anywhere on the screen.
  * 
- * @author (Justin Huang) 
- * @version (1 October 2015)
+ * @author Justin Huang
+ * @version 1 October 2015
  */
 public class Building
 {
-    /** description of instance variable x (add comment for each instance variable) */
+    /** 
+       xLeft x-coordinate of left side of building
+       yBottom y-coordinate of bottom of building
+       width width of building (difference in x)
+       height height of building (difference in y)
+       xRight x-coordinate of right side of building
+       yTop y-coordinate of top of building
+       wWidth width of window
+       wHeight height of window
+    */
     
     private int xLeft;
     private int yBottom;
