@@ -3,6 +3,7 @@ import java.awt.Rectangle;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
+import java.awt.Color;
 
 /**
  * A sun that appears in the upper right corner of the screen.
@@ -39,6 +40,8 @@ public class Sun
     {
         Ellipse2D.Double sun = new Ellipse2D.Double(xCenter, yCenter, 100, 100);
         
+        g2.setColor(Color.YELLOW);
+        g2.fill(sun);
         g2.draw(sun);
     }
 

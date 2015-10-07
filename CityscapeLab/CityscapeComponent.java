@@ -28,7 +28,9 @@ public class CityscapeComponent extends JComponent
     
     Sun sun = new Sun(1000,125);
     
-    Car car = new Car(1000,750);
+    Road road = new Road(0,800);
+    
+    Car car = new Car(1000,800);
     
     // define the CityscapeComponent contructor and intiailize all instance variables
     // ...
@@ -63,6 +65,8 @@ public class CityscapeComponent extends JComponent
         building25.draw(g2);
         
         sun.draw(g2);
+        
+        road.draw(g2);
         
         car.draw(g2);
     }

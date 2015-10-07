@@ -37,9 +37,14 @@ public class Car
      */
     public void draw(Graphics2D g2)
     {
-        Rectangle body = new Rectangle(this.xCenter-16,this.yCenter-4,32,8);
+        Rectangle body = new Rectangle(this.xCenter-32,this.yCenter-8,64,16);
+        Rectangle roof = new Rectangle(this.xCenter-16,this.yCenter-20,40,12);
+        Ellipse2D.Double frontwheel = new Ellipse2D.Double(this.xCenter-28,this.yCenter+8,12,12);
+        Ellipse2D.Double backwheel = new Ellipse2D.Double(this.xCenter+20,this.yCenter+8,12,12);
         
         g2.draw(body);
+        g2.draw(roof);
+        g2.draw(frontwheel);
+        g2.draw(backwheel);
     }
-
 }

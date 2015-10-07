@@ -3,6 +3,7 @@ import java.awt.Rectangle;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
+import java.awt.Color;
 
 /**
  * A building that can be positioned anywhere on the screen.
@@ -63,30 +64,22 @@ public class Building
         Rectangle story5 = new Rectangle(this.xLeft+10,this.yTop+135,wWidth,wHeight);
         Rectangle door = new Rectangle(this.xLeft+35,this.yBottom-20,30,20);
         
+        g2.setColor(Color.MAGENTA);
+        g2.fill(frame);
         g2.draw(frame);
+        g2.setColor(Color.YELLOW);
+        g2.fill(story1);
         g2.draw(story1);
+        g2.fill(story2);
         g2.draw(story2);
+        g2.fill(story3);
         g2.draw(story3);
+        g2.fill(story4);
         g2.draw(story4);
+        g2.fill(story5);
         g2.draw(story5);
+        g2.setColor(Color.BLUE);
+        g2.fill(door);
         g2.draw(door);
-    }
-    
-    /**
-     * Returns the x-coordinate of the bottom-left corner of the building.
-     * @return  xLeft x-coordinate of the bottom-left corner of the building.
-     */
-    public int getXLeft()
-    {
-        return this.xLeft;
-    }
-    
-    /**
-     * Returns the y-coordinate of the bottom-left corner of the building.
-     * @return  yBottom y-coordinate of the bottom-left corner of the building.
-     */
-    public int getYBottom()
-    {
-        return this.yBottom;
     }
 }
