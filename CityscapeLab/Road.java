@@ -6,44 +6,44 @@ import java.awt.geom.Point2D;
 import java.awt.Color;
 
 /**
- * Write a description of class Road here.
+ * A road that can be positioned anywhere on the screen.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Justin Huang 
+ * @version 1 October 2015
  */
 public class Road
 {
-    /** description of instance variable x (add comment for each instance variable) */
+    /** 
+       xLeft x-coordinate of left side of road
+       yTop y-coordinate of top of road
+    */
     
     private int xLeft;
-    private int yTop;
+    private int yTop; 
+   
+    private Rectangle road;
 
     /**
-     * Default constructor for objects of class Road
+     * Constructs a road with a given top left corner.
+     * @param x the x-coordinate of the top left corner.
+     * @param y the y-coordinate of the top left corner.
      */
     public Road(int x, int y)
     {
         this.xLeft = x;
         this.yTop = y;
+        this.road = new Rectangle(this.xLeft,this.yTop,1250,50);
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *    that describes the operation of the method
-     *
-     * @pre        preconditions for the method
-     *            (what the method assumes about the method's parameters and class's state)
-     * @post    postconditions for the method
-     *            (what the method guarantees upon completion)
-     * @param    y    description of parameter y
-     * @return    description of the return value
+     * Draws the road.
+     * @param g2 the graphics context
      */
     public void draw(Graphics2D g2)
     {
-        Rectangle road = new Rectangle(this.xLeft,this.yTop,1250,50);
-        
-        g2.setColor(Color.BLACK);
-        g2.fill(road);
-        g2.draw(road);
+        g2.setColor(Color.DARK_GRAY);
+        g2.fill(this.road);
+        g2.draw(this.road);
     }
 }
+

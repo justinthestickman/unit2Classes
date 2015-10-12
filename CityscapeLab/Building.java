@@ -32,13 +32,24 @@ public class Building
     private int yTop;
     private final int wWidth;
     private final int wHeight;
+    private Color frameColor;
+    private Color windowColor;
+    private Color doorColor;
+    
+    private Rectangle frame;
+    private Rectangle story1;
+    private Rectangle story2;
+    private Rectangle story3;
+    private Rectangle story4;
+    private Rectangle story5;
+    private Rectangle door;
 
     /**
      * Constructs a building with a given bottom left corner.
      * @param x the x-coordinate of the bottom left corner.
      * @param y the y-coordinate of the bottom left corner.
      */
-    public Building(int x, int y)
+    public Building(int x, int y, Color color1, Color color2, Color color3)
     {
         this.xLeft = x;
         this.yBottom = y;
@@ -48,6 +59,16 @@ public class Building
         this.yTop = yBottom-height;
         this.wWidth = 80;
         this.wHeight = 20;
+        this.frameColor = color1;
+        this.windowColor = color2;
+        this.doorColor = color3;
+        this.frame = new Rectangle(this.xLeft,this.yTop,width,height);
+        this.story1 = new Rectangle(this.xLeft+10,this.yTop+15,wWidth,wHeight);
+        this.story2 = new Rectangle(this.xLeft+10,this.yTop+45,wWidth,wHeight);
+        this.story3 = new Rectangle(this.xLeft+10,this.yTop+75,wWidth,wHeight);
+        this.story4 = new Rectangle(this.xLeft+10,this.yTop+105,wWidth,wHeight);
+        this.story5 = new Rectangle(this.xLeft+10,this.yTop+135,wWidth,wHeight);
+        this.door = new Rectangle(this.xLeft+35,this.yBottom-20,30,20);
     }
 
     /**
@@ -56,30 +77,23 @@ public class Building
      */
     public void draw(Graphics2D g2)
     {
-        Rectangle frame = new Rectangle(this.xLeft,this.yTop,width,height);
-        Rectangle story1 = new Rectangle(this.xLeft+10,this.yTop+15,wWidth,wHeight);
-        Rectangle story2 = new Rectangle(this.xLeft+10,this.yTop+45,wWidth,wHeight);
-        Rectangle story3 = new Rectangle(this.xLeft+10,this.yTop+75,wWidth,wHeight);
-        Rectangle story4 = new Rectangle(this.xLeft+10,this.yTop+105,wWidth,wHeight);
-        Rectangle story5 = new Rectangle(this.xLeft+10,this.yTop+135,wWidth,wHeight);
-        Rectangle door = new Rectangle(this.xLeft+35,this.yBottom-20,30,20);
-        
-        g2.setColor(Color.MAGENTA);
-        g2.fill(frame);
-        g2.draw(frame);
-        g2.setColor(Color.YELLOW);
-        g2.fill(story1);
-        g2.draw(story1);
-        g2.fill(story2);
-        g2.draw(story2);
-        g2.fill(story3);
-        g2.draw(story3);
-        g2.fill(story4);
-        g2.draw(story4);
-        g2.fill(story5);
-        g2.draw(story5);
-        g2.setColor(Color.BLUE);
-        g2.fill(door);
-        g2.draw(door);
+        g2.setColor(frameColor);
+        g2.fill(this.frame);
+        g2.draw(this.frame);
+        g2.setColor(windowColor);
+        g2.fill(this.story1);
+        g2.draw(this.story1);
+        g2.fill(this.story2);
+        g2.draw(this.story2);
+        g2.fill(this.story3);
+        g2.draw(this.story3);
+        g2.fill(this.story4);
+        g2.draw(this.story4);
+        g2.fill(this.story5);
+        g2.draw(this.story5);
+        g2.setColor(doorColor);
+        g2.fill(this.door);
+        g2.draw(this.door);
     }
 }
+
